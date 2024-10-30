@@ -46,7 +46,7 @@ const enterpriseResolverPlugin = {
 
       const enterprisePath = path.resolve(
         __dirname,
-        `./src/enterprise/${fileName}`
+        `./src/enterprise/${fileName}`,
       );
       const defaultPath = path.resolve(__dirname, `./src/${fileName}`);
 
@@ -119,7 +119,7 @@ export default defineConfig({
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
       "@enterprise": fileURLToPath(
-        new URL("./src/enterprise", import.meta.url)
+        new URL("./src/enterprise", import.meta.url),
       ),
       stream: "rollup-plugin-node-polyfills/polyfills/stream",
       events: "rollup-plugin-node-polyfills/polyfills/events",

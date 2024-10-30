@@ -6,8 +6,8 @@
         style="width: 250px; height: auto"
         :src="
           store?.state?.theme == 'dark'
-            ? getImageURL('images/common/open_observe_logo_2.svg')
-            : getImageURL('images/common/open_observe_logo.svg')
+            ? getImageURL('images/common/rai_logo.png')
+            : getImageURL('images/common/rai_logo.png')
         "
       />
     </div>

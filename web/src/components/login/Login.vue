@@ -56,8 +56,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         "
         :src="
           store?.state?.theme == 'dark'
-            ? getImageURL('images/common/open_observe_logo_2.svg')
-            : getImageURL('images/common/open_observe_logo.svg')
+            ? getImageURL('images/common/rai_logo.png')
+            : getImageURL('images/common/rai_logo.png')
         "
       />
     </div>
@@ -72,8 +72,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         "
         :src="
           store?.state?.theme == 'dark'
-            ? getImageURL('images/common/open_observe_logo_2.svg')
-            : getImageURL('images/common/open_observe_logo.svg')
+            ? getImageURL('images/common/rai_logo.png')
+            : getImageURL('images/common/rai_logo.png')
         "
       />
     </div>
@@ -260,14 +260,15 @@ export default defineComponent({
                   auth_time: Math.floor(Date.now() / 1000),
                   name: name.value,
                   exp: Math.floor(
-                    (new Date().getTime() + 1000 * 60 * 60 * 24 * 30) / 1000
+                    (new Date().getTime() + 1000 * 60 * 60 * 24 * 30) / 1000,
                   ),
                   family_name: "",
                   email: name.value,
                   role: res.data.role,
+                  token: authToken,
                 };
                 const encodedUserInfo: any = b64EncodeStandard(
-                  JSON.stringify(userInfo)
+                  JSON.stringify(userInfo),
                 );
 
                 //set user info into localstorage & store

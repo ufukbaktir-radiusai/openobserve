@@ -18,13 +18,20 @@ import type { AxiosInstance } from "axios";
 import axios from "axios";
 import config from "../aws-exports";
 import { Notify } from "quasar";
-import { useLocalUserInfo, useLocalCurrentUser } from "@/utils/zincutils";
+import {
+  useLocalUserInfo,
+  useLocalCurrentUser,
+  getAuthToken,
+} from "@/utils/zincutils";
 
 const http = ({ headers } = {} as any) => {
   let instance: AxiosInstance;
 
+  const authToken = getAuthToken();
+
   headers = {
     ...headers,
+    Authorization: authToken,
   };
 
   instance = axios.create({
@@ -43,14 +50,14 @@ const http = ({ headers } = {} as any) => {
         switch (error.response.status) {
           case 400:
             console.log(
-              JSON.stringify(error.response.data["error"] || "Bad Request")
+              JSON.stringify(error.response.data["error"] || "Bad Request"),
             );
             break;
           case 401:
             console.log(
               JSON.stringify(
-                error.response.data["error"] || "Invalid credentials"
-              )
+                error.response.data["error"] || "Invalid credentials",
+              ),
             );
             if (
               config.isCloud == "true" &&
@@ -120,20 +127,20 @@ const http = ({ headers } = {} as any) => {
             }
             console.log(
               JSON.stringify(
-                error.response.data["error"] || "Unauthorized Access"
-              )
+                error.response.data["error"] || "Unauthorized Access",
+              ),
             );
             break;
           case 404:
             console.log(
-              JSON.stringify(error.response.data["error"] || "Not Found")
+              JSON.stringify(error.response.data["error"] || "Not Found"),
             );
             break;
           case 500:
             console.log(
               JSON.stringify(
-                error.response.data["error"] || "Invalid ServerError"
-              )
+                error.response.data["error"] || "Invalid ServerError",
+              ),
             );
             break;
           default:
@@ -141,7 +148,7 @@ const http = ({ headers } = {} as any) => {
         }
       }
       return Promise.reject(error);
-    }
+    },
   );
 
   return instance;

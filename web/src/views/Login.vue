@@ -101,7 +101,7 @@ export default defineComponent({
               store.dispatch("setSelectedOrganization", selectedOrg.value);
             }
             return optiondata;
-          }
+          },
         );
         redirectUser();
       });

@@ -2474,7 +2474,7 @@ export const dd_events = [
                             tagName: "img",
                             attributes: {
                               class: "appLogo",
-                              src: "/src/assets/images/common/open_observe_logo.svg",
+                              src: "/src/assets/images/common/rai_logo.png",
                             },
                             childNodes: [],
                             id: 194,

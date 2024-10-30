@@ -20,8 +20,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
       <img
         :src="
           store.state.theme == 'dark'
-            ? getImageURL('images/common/open_observe_logo_2.svg')
-            : getImageURL('images/common/open_observe_logo.svg')
+            ? getImageURL('images/common/rai_logo.png')
+            : getImageURL('images/common/rai_logo.png')
         "
         class="logo"
         width="177"

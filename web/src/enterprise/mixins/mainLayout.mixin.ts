@@ -82,13 +82,13 @@ const MainLayoutCloudMixin = {
             const searchNearThreshold = Math.floor(
               (store.state.selectedOrganization.search_threshold *
                 parseInt(config.zincQuotaThreshold)) /
-                100
+                100,
             );
 
             const ingestNearThreshold = Math.floor(
               (store.state.selectedOrganization.ingest_threshold *
                 parseInt(config.zincQuotaThreshold)) /
-                100
+                100,
             );
             let usageMessage = "";
             if (
@@ -123,11 +123,11 @@ const MainLayoutCloudMixin = {
 
               usageMessage = usageMessage.replace(
                 "[SEARCH_USAGE]",
-                percentageSearchQuota <= 100 ? percentageSearchQuota : 100
+                percentageSearchQuota <= 100 ? percentageSearchQuota : 100,
               );
               usageMessage = usageMessage.replace(
                 "[INGEST_USAGE]",
-                percentageIngestQuota <= 100 ? percentageIngestQuota : 100
+                percentageIngestQuota <= 100 ? percentageIngestQuota : 100,
               );
             }
             // quotaThresholdMsg.value = usageMessage;
@@ -145,7 +145,7 @@ const MainLayoutCloudMixin = {
         .getRefreshToken()
         .then((res) => {
           const sessionUserInfo: any = getUserInfo(
-            "#id_token=" + res.data.data.id_token
+            "#id_token=" + res.data.data.id_token,
           );
 
           const userInfo = sessionUserInfo !== null ? sessionUserInfo : null;
