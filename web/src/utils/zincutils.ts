@@ -318,15 +318,15 @@ export const getAuthToken = () => {
       const userInfo = JSON.parse(decodedUserInfo);
 
       // Check if authToken exists in the user info
-      const authToken = userInfo.token || null; // Assuming token is stored as 'token'
+      const authToken = userInfo.token || null;
       return authToken;
     } else {
       console.warn("No user info found in local storage.");
-      return null; // Return null if no user info exists
+      return null;
     }
   } catch (error) {
     console.error("Error while retrieving authToken:", error);
-    return null; // Return null in case of error
+    return null;
   }
 };
 
