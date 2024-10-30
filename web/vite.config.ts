@@ -94,6 +94,7 @@ export default defineConfig({
     __INTLIFY_JIT_COMPILATION__: true,
   },
   server: {
+    host: "0.0.0.0",
     port: 8081,
     // headers: {
     //   "Content-Security-Policy":
